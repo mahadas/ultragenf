@@ -12,7 +12,7 @@ client.on("ready", () => {
     });
 });
 
-client.on("message", (message) => {
+client.on("message", async message => {
 	const prefix = "!"
 	if (message.content.startsWith(prefix + "ping")) {
 		const m = await message.channel.send("Ping?");
