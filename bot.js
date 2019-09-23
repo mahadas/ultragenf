@@ -1,4 +1,4 @@
-const Discord = require('discord.js');
+vconst Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "!"
 
@@ -13,42 +13,29 @@ client.on("guildMemberAdd", (member) => {
 
 
 client.on("message", (message) => {
-	if (message.content.startsWith("ping")) {
-		message.channel.send("pong!");
-
-	}
-	if (message.content.startsWith(prefix +"richembed" )){
-	    const embed = new Discord.RichEmbed() 
-	    .setTitle("Este es su título, puede contener 256 caracteres")
-	    .setAuthor(message.author.username, message.author.avatarURL)
-	    .setColor(0x00AE86)
-	    .setDescription("Este es el cuerpo principal del texto, puede contener 2048 caracteres.")
-	    .setFooter("Pie de página, puede contener 2048 caracteres", client.user.avatarURL)
-	    .setImage(message.author.avatarURL)
-	    .setThumbnail(message.author.avatarURL)
-	    .setTimestamp()
-	    .setURL("https://github.com/CraterMaik")
-	    .addField("Este es un título de campo, puede contener 256 caracteres",
-	      "Este es un valor de campo, puede contener 2048 caracteres.")
-	    .addField("Campo en línea", "Debajo del campo en línea", true)
-	    .addBlankField(true)
-	    .addField("Campo en línea 3", "Puede tener un máximo de 25 campos.", true);
-	    
-	    message.channel.send({embed});
-	}
-
     if (primaryCommand == "ayuda") {
-        helpCommand(arguments, receivedMessage)	
-	}  
+        message.send.channels('Este bot esta hecho por mahada#0641');
+
+    }  
 
 });
 
 
-function helpCommand(arguments, receivedMessage) {
-    if (arguments.length > 0) {
-        receivedMessage.channel.send("It looks like you might need help with " + arguments)
+function processCommand(receivedMessage) {
+    let fullCommand = receivedMessage.content.substr(1) // Remove the leading exclamation mark
+    let splitCommand = fullCommand.split(" ") // Split the message up in to pieces for each space
+    let primaryCommand = splitCommand[0] // The first word directly after the exclamation is the command
+    let arguments = splitCommand.slice(1) // All other words are arguments/parameters/options for the command
+
+    console.log("Command received: " + primaryCommand)
+    console.log("Arguments: " + arguments) // There may not be any arguments
+
+    if (primaryCommand == "help") {
+        helpCommand(arguments, receivedMessage)
+    } else if (primaryCommand == "multiply") {
+        multiplyCommand(arguments, receivedMessage)
     } else {
-        receivedMessage.channel.send("I'm not sure what you need help with. Try `!help [topic]`")
+        receivedMessage.channel.send("I don't understand the command. Try `!help` or `!multiply`")
     }
 }
 
