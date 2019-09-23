@@ -37,6 +37,9 @@ client.on("message", (message) => {
 	    message.channel.send({embed});
 	}
 
+    if (primaryCommand == "ayuda") {
+        helpCommand(arguments, receivedMessage)	
+
 
 });
 
