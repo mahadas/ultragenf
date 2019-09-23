@@ -2,15 +2,15 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const prefix = "!"
 
-client.once('ready', () => {
-	console.log('El bot ha sido iniciado correctamente.');
-	client.user.setPresence( {
+client.on("ready", () => {
+   console.log(`Estoy listo!, conectado en ${client.guilds.size} servidores y  ${client.users.size} usuarios.`);
+   client.user.setPresence( {
        status: "online",
        game: {
-           name: `!ayuda - CopyRight 2019`,
+           name: `-help | Estoy en ${client.guilds.size} servidores.`,
            type: "PLAYING"
        }
-    });	
+    });
 });
 
 client.on('message', message => {
