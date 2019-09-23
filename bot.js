@@ -15,8 +15,11 @@ client.on("ready", () => {
 client.on("message", async message => {
 	const prefix = "!"
 	if (message.content.startsWith(prefix + "ping")) {
-		const m = await message.channel.send("Ping?");
-		m.edit(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
+		const m = await
+		message.channel.send({embed: {
+			color: 3447003,
+			description: "Su internet es de ${m.createdTimestamp - message.createdTimestamp}ms ."
+		}});
 	}	
 });
 
