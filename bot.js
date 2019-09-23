@@ -13,30 +13,13 @@ client.on("guildMemberAdd", (member) => {
 
 
 client.on("message", (message) => {
-    if (primaryCommand == "ayuda") {
-        message.send.channels('Este bot esta hecho por mahada#0641');
+	if(command === prefix + 'aleatorio'){
+	    var rpts = ["Sí", "No", "¿Por qué?", "Por favor", "Tal vez", "No sé", "Definitivamente?", " ¡Claro! "," Sí "," No "," Por supuesto! "," Por supuesto que no "];
+	    if (!texto) return message.reply(`Escriba una pregunta.`);
+	    message.channel.send(message.member.user+' a su pregunta `'+texto+'` mi respuesta es: `'+ rpts[Math.floor(Math.random() * rpts.length)]+'`');
 
-    }  
+	}
 
 });
-
-
-function processCommand(receivedMessage) {
-    let fullCommand = receivedMessage.content.substr(1) // Remove the leading exclamation mark
-    let splitCommand = fullCommand.split(" ") // Split the message up in to pieces for each space
-    let primaryCommand = splitCommand[0] // The first word directly after the exclamation is the command
-    let arguments = splitCommand.slice(1) // All other words are arguments/parameters/options for the command
-
-    console.log("Command received: " + primaryCommand)
-    console.log("Arguments: " + arguments) // There may not be any arguments
-
-    if (primaryCommand == "help") {
-        helpCommand(arguments, receivedMessage)
-    } else if (primaryCommand == "multiply") {
-        multiplyCommand(arguments, receivedMessage)
-    } else {
-        receivedMessage.channel.send("I don't understand the command. Try `!help` or `!multiply`")
-    }
-}
 
 client.login(process.env.BOT_TOKEN);
