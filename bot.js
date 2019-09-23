@@ -4,28 +4,25 @@ const prefix = "!"
 
 client.on("ready", () => {
    console.log(`Estoy listo!, conectado en ${client.guilds.size} servidores y  ${client.users.size} usuarios.`);
-   client.user.setPresence( {
-       status: "online",
-       game: {
-           name: `!help | UltraGen`,
-           type: "STREAMING"
-       }
-    });
 });
 
 client.on("guildMemberAdd", (member) => {
    var canal = client.channels.get('625499285215117343'); 
-   canal.send(`${member.user}, bienvenido al servidor pasala bien.`);
-   
+   canal.send(`${member.user}, bienvenido al servidor pasala bien.`);   
 });
 
-client.on('message', message => {
-	if (message.content.startsWith(prefix +"generar" )){
+
+client.on("message", (message) => {
+	if (message.content.startsWith("ping")) {
+		message.channel.send("pong!");
+	}
+	if (message.content.startsWith(prefix +"richembed" )){
 	    const embed = new Discord.RichEmbed() 
 	    .setTitle("Este es su título, puede contener 256 caracteres")
+	    .setAuthor(message.author.username, message.author.avatarURL)
 	    .setColor(0x00AE86)
 	    .setDescription("Este es el cuerpo principal del texto, puede contener 2048 caracteres.")
-	    .setFooter("Version 1.0 para UltraGen - Desarrollado por mahada#0641")
+	    .setFooter("Pie de página, puede contener 2048 caracteres", client.user.avatarURL)
 	    .setImage(message.author.avatarURL)
 	    .setThumbnail(message.author.avatarURL)
 	    .setTimestamp()
@@ -38,19 +35,8 @@ client.on('message', message => {
 	    
 	    message.channel.send({embed});
 	}
-	if (command === prefix +'ping') {
 
-    let ping = Math.floor(message.client.ping);
-    
-    message.channel.send(":ping_pong: Pong!")
-      .then(m => {
-
-          m.edit(`:incoming_envelope: Ping Mensajes: \`${Math.floor(m.createdTimestamp - Date.now())} ms\`\n:satellite_orbital: Ping DiscordAPI: \`${ping} ms\``);
-      
-      });
-    
-  }
-  
 });
+
 
 client.login(process.env.BOT_TOKEN);
