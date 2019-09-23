@@ -15,6 +15,7 @@ client.on("guildMemberAdd", (member) => {
 client.on("message", (message) => {
 	if (message.content.startsWith("ping")) {
 		message.channel.send("pong!");
+
 	}
 	if (message.content.startsWith(prefix +"richembed" )){
 	    const embed = new Discord.RichEmbed() 
@@ -36,7 +37,16 @@ client.on("message", (message) => {
 	    message.channel.send({embed});
 	}
 
+
 });
 
+
+function helpCommand(arguments, receivedMessage) {
+    if (arguments.length > 0) {
+        receivedMessage.channel.send("It looks like you might need help with " + arguments)
+    } else {
+        receivedMessage.channel.send("I'm not sure what you need help with. Try `!help [topic]`")
+    }
+}
 
 client.login(process.env.BOT_TOKEN);
