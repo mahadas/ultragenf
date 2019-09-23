@@ -39,7 +39,7 @@ client.on("message", (message) => {
 
     if (primaryCommand == "ayuda") {
         helpCommand(arguments, receivedMessage)	
-
+	}  
 
 });
 
