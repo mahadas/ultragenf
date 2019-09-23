@@ -4,6 +4,13 @@ const prefix = "!"
 
 client.once('ready', () => {
 	console.log('El bot ha sido iniciado correctamente.');
+	client.user.setPresence( {
+       status: "online",
+       game: {
+           name: `!ayuda - CopyRight 2019`,
+           type: "PLAYING"
+       }
+    });	
 });
 
 client.on('message', message => {
