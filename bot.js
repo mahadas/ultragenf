@@ -15,12 +15,6 @@ client.on("ready", () => {
 client.on("message", async message => {
 	const prefix = "!"
 	if (message.content.startsWith(prefix + "ping")) {
-		const m = await
-		message.channel.send({embed: {
-			color: 3447003,
-			description: "Su internet es de ${m.createdTimestamp - message.createdTimestamp}ms ."
-		}});
-	}	
-});
-
+		message.channel.sendMessage('Si Internet Es De `' + `${Date.now() - message.createdTimestamp}` + ' ms`');
+	}
 client.login(process.env.BOT_TOKEN);
