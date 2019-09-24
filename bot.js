@@ -16,12 +16,8 @@ client.on("ready", () => {
 
 
 client.on("message", (message) => {
-	const m = await
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
  	const command = args.shift().toLowerCase();	
-	if (message.content.startsWith(prefix + "ping")) {
-	    m.edit(`Tu conexion es de: ${m.createdTimestamp - message.createdTimestamp}ms`);
-	} else
 	if (message.content.startsWith(prefix + "foo")) {
 		message.channel.send("bar!");
  	 }
