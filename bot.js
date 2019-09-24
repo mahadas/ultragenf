@@ -15,13 +15,11 @@ client.on("ready", () => {
 
 
 client.on("message", message => {
-	if(command === "say"){
+	if(command === prefix + "say"){
 		let text = args.join(" ");
 		message.delete();
 		message.channel.send(text);
 	}
 });
-
-
 
 client.login(process.env.BOT_TOKEN);
