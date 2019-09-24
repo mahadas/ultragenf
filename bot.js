@@ -16,7 +16,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
 	var Comando = 'anuncio';
-	if (message.content === prefix + Comando) {
+	if (command === 'avatar') {
 		if (args[0]) {
 			const user = getUserFromMention(args[0]);
 			if (!user) {
@@ -27,7 +27,7 @@ client.on('message', message => {
 		}
 
 		return message.channel.send(`${message.author.username}, your avatar: ${message.author.displayAvatarURL}`);
-	}  	
+	}
 });
 
 
