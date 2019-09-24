@@ -26,14 +26,6 @@ client.on("message", (message) => {
   if (message.content.startsWith(prefix + "foo")) {
     message.channel.send("bar!");
   }
-  if (message.content.startsWith(prefix + "anuncio")) {
-	if (!args.length) {
-		return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
-	}
-
-	message.channel.send(`Command name: ${command}\nArguments: ${args}`);
-	}
-
 });
 
 
