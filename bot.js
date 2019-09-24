@@ -2,12 +2,12 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const prefix = "!" //Bot command prefix
 var request = require('request');
-var CMD = 'ping'; //Command to trigger
-var mcIP = 'mc.server.net'; //Add your Minecraft server IP
-var mcPort = 25565; //The port of the server, default it 25565
+var Comando = 'ping'; //Command to trigger
+var IP = 'mc.heavenmc.es'; //Add your Minecraft server IP
+var Puerto = 25565; //The port of the server, default it 25565
 var serverName = 'Minecraft Server'; //Your server name
-var serverUrl = "https://minecraft.net"; //Server website
-var serverLogo = "https://images-eu.ssl-images-amazon.com/images/I/512dVKB22QL.png"; //Server logo
+var serverUrl = "https://tienda.heavenmc.es"; //Server website
+var serverLogo = "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"; //Server logo
 
 
 client.on("ready", () => {
@@ -22,14 +22,14 @@ client.on("ready", () => {
 });
 
 
-client.on('message', message => {
+bot.on('message', message => {
 
-  if (message.content === prefix + 'estado') {
-    var url = 'http://mcapi.us/server/status?ip=' + 'mc.heavenmc.es' + '&port=' + '25565';
+  if (message.content === prefix + Comando) {
+    var url = 'http://mcapi.us/server/status?ip=' + IP + '&port=' + Puerto;
     request(url, function (err, response, body) {
       if (err) {
         console.log(err);
-        return message.reply('El servidor no esta conectado correcamente');
+        return message.reply('No se pudo conectar el servidor');
       }
       
       body = JSON.parse(body);
@@ -49,9 +49,9 @@ client.on('message', message => {
       
       const embed = {
         "author": {
-          "name": "HeavenMC NetWork",
-          "url": "tienda.heavenmc.es",
-          "icon_url": "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"
+          "name": serverName,
+          "url": serverUrl,
+          "icon_url": serverLogo
         },
         "color": color,
         "fields": [
@@ -67,7 +67,7 @@ client.on('message', message => {
           }
         ],
         "footer": {
-          "text": "IP: mc.heavenmc.es"
+          "text": "IP: " + IP
         }
       };
       message.channel.send({ embed });
