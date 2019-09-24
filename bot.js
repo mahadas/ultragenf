@@ -37,7 +37,11 @@ client.on("message", (message) => {
 	else if (command === 'anuncio') {
 		let text = args.join(" ");
 		message.delete();
-		message.channel.send(text);
+		message.channel.send({embed: {
+			color: 3447003,
+			description: (text)
+		}});
+
 	}
 });
 
