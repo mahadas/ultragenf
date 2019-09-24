@@ -34,6 +34,11 @@ client.on("message", (message) => {
 
 		message.channel.send(`First argument: ${args[0]}`);
 	}
+	else if (command === 'anuncio') {
+		let text = args.join(" ");
+		message.delete();
+		message.channel.send(text);
+	}
 });
 
 
