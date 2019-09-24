@@ -15,11 +15,17 @@ client.on("ready", () => {
 
 
 client.on("message", message => {
-	if(command === prefix + "say"){
-		let text = args.join(" ");
-		message.delete();
-		message.channel.send(text);
+	if (command === prefix + "ayuda") {
+		message.reply('Todo bien a todos weones culeados')
 	}
+	if (command === prefix + "anuncio") {
+		if (!args.length) {
+			message.channel.send('No pusiste ningun argumento')
+		}
+		else if (args[0] === 'foo') {
+			return message.channel.send('bareass');
+		}
+	}		
 });
 
 client.login(process.env.BOT_TOKEN);
