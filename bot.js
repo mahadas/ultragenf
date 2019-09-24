@@ -2,12 +2,12 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const prefix = "!" //Bot command prefix
 var request = require('request');
-var Comando = 'ping'; //Command to trigger
-var IP = 'mc.heavenmc.es'; //Add your Minecraft server IP
-var Puerto = 25565; //The port of the server, default it 25565
-var serverName = 'Minecraft Server'; //Your server name
-var serverUrl = "https://tienda.heavenmc.es"; //Server website
-var serverLogo = "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"; //Server logo
+var Comando = 'ping';
+var IP = 'mc.heavenmc.es';
+var Puerto = 25565;
+var NombreServer = 'HeavenMC NetWork';
+var TiendaServer = "https://tienda.heavenmc.es";
+var LogoServer = "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png";
 
 
 client.on("ready", () => {
@@ -49,9 +49,9 @@ client.on('message', message => {
       
       const embed = {
         "author": {
-          "name": serverName,
-          "url": serverUrl,
-          "icon_url": serverLogo
+          "name": NombreServer,
+          "url": TiendaServer,
+          "icon_url": LogoServer
         },
         "color": color,
         "fields": [
