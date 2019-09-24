@@ -35,13 +35,15 @@ client.on("message", (message) => {
 		message.channel.send(`First argument: ${args[0]}`);
 	}
 	else if (command === 'anuncio') {
+
 		let text = args.join(" ");
 		message.delete();
 		message.channel.send(text)
-		message.channel.send({embed: {
-			color: 3447003,
-			description: '(text)'
-		}});
+		const anuncios = new Discord.RichEmbed()
+			.setColor('#0099ff')
+			.setTitle('HeavenMC Network')
+			.addField(text)
+		channel.send(anuncios);
 
 	}
 });
