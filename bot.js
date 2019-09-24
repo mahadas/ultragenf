@@ -1,5 +1,8 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
+const args = message.content.slice(prefix.length).split(' ');
+const command = args.shift().toLowerCase();
+
 
 client.on("ready", () => {
    console.log(`Estoy listo!, conectado en ${client.guilds.size} servidores y  ${client.users.size} usuarios.`);
