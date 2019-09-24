@@ -14,12 +14,13 @@ client.on("ready", () => {
 
 
 client.on("message", (message) => {
-  if (!message.content.startsWith(config.prefix) || message.author.bot) return;
+  const prefix = "!"
+  if (!message.content.startsWith(prefix) || message.author.bot) return;
 
-  if (message.content.startsWith(config.prefix + "ping")) {
+  if (message.content.startsWith(prefix + "ping")) {
     message.channel.send("pong!");
   } else
-  if (message.content.startsWith(config.prefix + "foo")) {
+  if (message.content.startsWith(prefix + "foo")) {
     message.channel.send("bar!");
   }
 });
