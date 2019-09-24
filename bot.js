@@ -43,8 +43,43 @@ client.on("message", (message) => {
 			color: 3447003,
 			description: '(text)'
 		}});
+	}
+	else if (command === 'redes') {
+		message.channel.send({embed: {
+			color: 3447003,
+      	author: {
+			name: client.user.username,
+			icon_url: client.user.avatarURL
+		},
+		title: "Enlace Embed",
+		url: "https://github.com/CraterMaik",
+		description: "Mesaje de prueba para la descripcion del embed.",
+		fields: [{
+			name: "Campo1",
+			value: "Pueden tener diferentes campos con pequeñas descripciones."
+		},
+		{
+			name: "Campo2",
+			value: "Puedes poner [Enlaces web](https://github.com/CraterMaik) dentro del embed."
+		},
+		{
+			name: "Campo3",
+			value: "Puedes poner todos los Markdown *cursiva* **__Marcado__** dentro de un embed."
+		}
+		],
+		timestamp: new Date(),
+		footer: {
+		icon_url: client.user.avatarURL,
+		text: "github.com/CraterMaik"
+      }
+    }
+});
+
 
 	}
+
+
+
  if (command === "ban") {
    let buser = message.mentions.users.first();
    let breason = args.join(" ");
