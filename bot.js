@@ -19,7 +19,8 @@ client.on("message", (message) => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
  	const command = args.shift().toLowerCase();	
 	if (message.content.startsWith(prefix + "ping")) {
-		message.channel.send("pong!");
+		const m = await
+	    m.edit(`:satellite: Tu conexion es de: ${m.createdTimestamp - message.createdTimestamp}ms`);
 	} else
 	if (message.content.startsWith(prefix + "foo")) {
 		message.channel.send("bar!");
@@ -35,13 +36,9 @@ client.on("message", (message) => {
 		message.channel.send(`First argument: ${args[0]}`);
 	}
 	else if (command === 'anuncio') {
-		const anuncios = new Discord.RichEmbed()
-			.setColor('#0099ff')
-			.setTitle('HeavenMC Network')
-			.addField(text)
 		let text = args.join(" ");
 		message.delete();
-		message.channel.send(anuncios);
+		message.channel.send(text);
 
 	}
 });
