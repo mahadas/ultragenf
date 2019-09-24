@@ -8,7 +8,7 @@ client.on("ready", () => {
 	client.user.setPresence({
 		status: "online",
 		game: {
-			name: "-help | crater",
+			name: "!ayuda - UltraGen",
 			type: "PLAYING"
 			}
 		});
