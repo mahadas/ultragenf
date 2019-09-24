@@ -4,15 +4,14 @@ const prefix = "!"
 
 
 client.on("ready", () => {
-   console.log(`Estoy listo!, conectado en ${client.guilds.size} servidores y  ${client.users.size} usuarios.`);
-client.user.setPresence({
-	       status: "online",
-	       game: {
-	           name: "-help | crater en directo",
-	           url: "https://www.twitch.tv/CraterMaik",
-	           type: "STREAMING"
-	       }
-	   });
+	console.log(`Estoy listo!, conectado en ${client.guilds.size} servidores y  ${client.users.size} usuarios.`);
+	client.user.setPresence({
+		status: "online",
+		game: {
+			name: "-help | crater",
+			type: "PLAYING"
+			}
+		});
 });
 
 
@@ -67,7 +66,7 @@ client.on("message", (message) => {
    }
  
 
-	
+
 });
 
 
