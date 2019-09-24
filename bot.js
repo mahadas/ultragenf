@@ -31,7 +31,7 @@ client.on("message", (message) => {
 
 		message.channel.send(`First argument: ${args[0]}`);
 	}
-	else if (command === 'anuncio') {
+	if (message.content.startsWith(prefix + "anuncio")) {
 		let text = args.join(" ");
 		message.delete();
 		message.channel.send(text);
