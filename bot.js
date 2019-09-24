@@ -2,6 +2,12 @@ const Discord = require('discord.js')
 const client = new Discord.Client()
 const prefix = "!" //Bot command prefix
 var request = require('request');
+var CMD = 'ping'; //Command to trigger
+var mcIP = 'mc.server.net'; //Add your Minecraft server IP
+var mcPort = 25565; //The port of the server, default it 25565
+var serverName = 'Minecraft Server'; //Your server name
+var serverUrl = "https://minecraft.net"; //Server website
+var serverLogo = "https://images-eu.ssl-images-amazon.com/images/I/512dVKB22QL.png"; //Server logo
 
 
 client.on("ready", () => {
@@ -18,7 +24,7 @@ client.on("ready", () => {
 
 client.on('message', message => {
 
-  if (message.content === prefix + "estado") {
+  if (message.content === prefix + 'estado') {
     var url = 'http://mcapi.us/server/status?ip=' + 'mc.heavenmc.es' + '&port=' + '25565';
     request(url, function (err, response, body) {
       if (err) {
@@ -43,7 +49,7 @@ client.on('message', message => {
       
       const embed = {
         "author": {
-          "name": "HeavenMC NetWork" + " Server Status",
+          "name": "HeavenMC NetWork",
           "url": "tienda.heavenmc.es",
           "icon_url": "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"
         },
@@ -61,7 +67,7 @@ client.on('message', message => {
           }
         ],
         "footer": {
-          "text": "IP: " + "mc.heavenmc.es"
+          "text": "IP: mc.heavenmc.es"
         }
       };
       message.channel.send({ embed });
