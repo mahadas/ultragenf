@@ -6,12 +6,13 @@ const prefix = "!"
 client.on("ready", () => {
 	console.log(`Estoy listo!, conectado en ${client.guilds.size} servidores y  ${client.users.size} usuarios.`);
 	client.user.setPresence({
-		status: "online",
-		game: {
-			name: "!ayuda - UltraGen",
-			type: "PLAYING"
-			}
-		});
+       status: "online",
+       game: {
+           name: "!ayuda | UltraGen",
+           url: "https://youtube.com/c/FacuJM",
+           type: "STREAMING"
+       }
+   });
 });
 
 
