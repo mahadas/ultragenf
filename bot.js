@@ -15,18 +15,15 @@ client.on("ready", () => {
 
 
 client.on('message', message => {
-	var Comando = 'anuncio';
-	if (command === 'avatar') {
-		if (args[0]) {
-			const user = getUserFromMention(args[0]);
-			if (!user) {
-				return message.reply('Please use a proper mention if you want to see someone else\'s avatar.');
-			}
-
-			return message.channel.send(`${user.username}'s avatar: ${user.displayAvatarURL}`);
+	if (command === 'args-info') {
+		if (!args.length) {
+			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
+		}
+		else if (args[0] === 'foo') {
+			return message.channel.send('bar');
 		}
 
-		return message.channel.send(`${message.author.username}, your avatar: ${message.author.displayAvatarURL}`);
+		message.channel.send(`First argument: ${args[0]}`);
 	}
 });
 
