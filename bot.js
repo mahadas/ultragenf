@@ -47,7 +47,7 @@ client.on('message', message => {
       
       const embed = {
         "author": {
-          "name": NombreServer,
+          "name": (body.motd),
           "url": TiendaServer,
           "icon_url": LogoServer
         },
