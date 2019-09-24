@@ -1,8 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const args = message.content.slice(prefix.length).split(' ');
-const command = args.shift().toLowerCase();
-
+const prefix = "!"
 
 client.on("ready", () => {
    console.log(`Estoy listo!, conectado en ${client.guilds.size} servidores y  ${client.users.size} usuarios.`);
@@ -17,15 +15,14 @@ client.on("ready", () => {
 
 
 client.on("message", (message) => {
-  const prefix = "!"
-  if (!message.content.startsWith(prefix) || message.author.bot) return;
-
-  if (message.content.startsWith(prefix + "ping")) {
-    message.channel.send("pong!");
-  } else
-  if (message.content.startsWith(prefix + "foo")) {
-    message.channel.send("bar!");
-  }
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+ 	const command = args.shift().toLowerCase();	
+	if (message.content.startsWith(prefix + "ping")) {
+		message.channel.send("pong!");
+	} else
+	if (message.content.startsWith(prefix + "foo")) {
+		message.channel.send("bar!");
+ 	 }
 });
 
 
