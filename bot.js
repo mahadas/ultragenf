@@ -16,11 +16,11 @@ client.on("ready", () => {
 
 
 client.on("message", (message) => {
+	const m = await
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
  	const command = args.shift().toLowerCase();	
 	if (message.content.startsWith(prefix + "ping")) {
-		const m = await
-	    m.edit(`:satellite: Tu conexion es de: ${m.createdTimestamp - message.createdTimestamp}ms`);
+	    m.edit(`Tu conexion es de: ${m.createdTimestamp - message.createdTimestamp}ms`);
 	} else
 	if (message.content.startsWith(prefix + "foo")) {
 		message.channel.send("bar!");
@@ -39,7 +39,6 @@ client.on("message", (message) => {
 		let text = args.join(" ");
 		message.delete();
 		message.channel.send(text);
-
 	}
 });
 
