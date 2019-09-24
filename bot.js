@@ -22,7 +22,7 @@ client.on("ready", () => {
 });
 
 
-bot.on('message', message => {
+client.on('message', message => {
 
   if (message.content === prefix + Comando) {
     var url = 'http://mcapi.us/server/status?ip=' + IP + '&port=' + Puerto;
