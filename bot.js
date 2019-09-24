@@ -1,14 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const prefix = "!" //Bot command prefix
-var request = require('request');
-var Comando = 'estado';
-var IP = 'mc.heavenmc.es';
-var Puerto = 25565;
-var NombreServer = 'HeavenMC NetWork';
-var TiendaServer = "https://tienda.heavenmc.es";
-var LogoServer = "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png";
-
+const prefix = "!"
 
 client.on("ready", () => {
    console.log(`Estoy listo!, conectado en ${client.guilds.size} servidores y  ${client.users.size} usuarios.`);
@@ -23,7 +15,13 @@ client.on("ready", () => {
 
 
 client.on('message', message => {
-
+  var request = require('request');
+  var Comando = 'estado';
+  var IP = 'mc.heavenmc.es';
+  var Puerto = 25565;
+  var NombreServer = 'HeavenMC NetWork';
+  var TiendaServer = "https://tienda.heavenmc.es";
+  var LogoServer = "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png";
   if (message.content === prefix + Comando) {
     var url = 'http://mcapi.us/server/status?ip=' + IP + '&port=' + Puerto;
     request(url, function (err, response, body) {
