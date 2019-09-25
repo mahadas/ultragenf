@@ -41,6 +41,13 @@ client.on("message", (message) => {
 		if (message.channel.id === '626559477566406666') {	
 			message.channel.send('estas en este canal')
 		}
+		else {
+			message.channel.send({embed: {
+				color: 15158332,
+				description: 'No puedes usar este comando en este canal.'
+			}});			
+
+		}
 	}
 
 	else if (command === 'args-info') {
