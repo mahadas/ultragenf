@@ -56,6 +56,8 @@ client.on("message", (message) => {
 			.setTimestamp()
 
 		message.channel.send({embed})
+		message.react('✅');
+		message.react('❎');			
 	}
 
 	else if (command === 'redes') {
