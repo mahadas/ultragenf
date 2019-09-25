@@ -26,9 +26,13 @@ client.on("message", (message) => {
 		message.channel.send("bar!");
  	 }
 	if (message.content.startsWith(prefix + "generar")) {
-		var minecraft = ["Your facts", "...", "..."];
-		var mines = Math.floor(Math.random() * minecraft.length);
-		message.channel.send(minecraft[mines]);
+
+		if (args[0] === 'minecraft') {
+			var minecrafts = ["Your facts", "...", "..."];
+			var mine = Math.floor(Math.random() * minecrafts.length);
+			message.channel.send(minecrafts[mine]);
+			message.author.send('Te estamos enviando tu celular al mensaje privado')
+		}
 	}
 	else if (command === 'args-info') {
 		if (!args.length) {
