@@ -58,7 +58,14 @@ client.on("message", (message) => {
 			message.react('❎');
 		message.channel.send({embed})
 	}
-
+	if (message.content.startsWith(prefix + "ayuda")) {
+		const ayuda = new Discord.RichEmbed()
+			.setAuthor('Aca tienes mi ayuda en los comandos', 'https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png')
+			.addField('.Online', 'Comprueba los usuarios conectados en el servidor de')
+			.setColor(3447003)
+			.setTimestamp()
+		message.channel.send({ayuda})
+	}
 	else if (command === 'redes') {
 		message.channel.send({embed: {
 			color: 10181046,
