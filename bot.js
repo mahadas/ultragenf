@@ -18,9 +18,9 @@ client.on("message", (message) => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
 	const command = args.shift().toLowerCase();	
 	if (command === 'ping') {
-    let ping = Math.floor(message.client.ping);
-      .then(m => {
-          m.edit(`satellite_orbital Tu conexion es de \`${Math.floor(m.createdTimestamp - Date.now())} ms`);
+		let ping = Math.floor(message.client.ping);
+		.then(m => {
+			m.edit(`satellite_orbital Tu conexion es de \`${Math.floor(m.createdTimestamp - Date.now())} ms\`);
       });
   }
 });
