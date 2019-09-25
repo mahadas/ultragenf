@@ -67,39 +67,17 @@ client.on("message", (message) => {
             }
 	}        
 	if (message.content.startsWith(prefix + "ayuda")) {
-		message.channel.send({embed: {
-			color: 3447003,
-      	author: {
-			name: "Aca te dejamos nuestros comandos",
-			icon_url: "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"
-		},
-		fields: [{
-			name: ".Ping",
-			value: "Comprueba la latencia del BOT."
-		},
-		{
-			name: ".Ip",
-			value: "Te muestro la ip del servidor."
-		},
-		{
-			name: ".Online",
-			value: "Te muestra las personas conectadas en el servidor."
-		},
-		{
-			name: ".Redes",
-			value: "Mira nuestras redes sociales."
-		},		
-		{
-			name: ".Servidor",
-			value: "Muestra la informacion del servidor de discord."
-		}
-		],
-		timestamp: new Date(),
-		footer: {
-		icon_url: client.user.avatarURL,
-		text: "IP: play.heavenmc.es"
-      }
-    }	 
+		const ayuda = new Discord.RichEmbed()
+			.setAuthor('Aca te dejamos nuestros comandos' , 'https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png')
+			.addField('.Ping', 'Comprueba la latencia del BOT.')
+			.addField('.Ip', 'Te muestro la ip del servidor.')
+			.addField('.Online', 'Te muestra las personas conectadas en el servidor.')
+			.addField('.Redes', 'Mira nuestras redes sociales.')
+			.addField('.Servidor', 'Muestra la informacion del servidor de discord.')
+			.setColor(3447003)
+			.setTimestamp()
+			.setFooter('IP: play.heavenmc.es');
+		message.channel.send({ayuda})
 	if (message.content.startsWith(prefix + "redes")) {
 		message.channel.send({embed: {
 			color: 10181046,
@@ -120,7 +98,7 @@ client.on("message", (message) => {
 			value: "[Click aqui para redirigirse](https://twitter.com/HeavenMC7)"
 		}
 		],
-		timestamp: new Date(),
+		timestamp: neww Date(),
 		footer: {
 		icon_url: client.user.avatarURL,
 		text: "IP: play.heavenmc.es"
