@@ -58,7 +58,13 @@ client.on("message", (message) => {
 			message.react('❎');
 		message.channel.send({embed})
 	}
-
+	if (message.content.startsWith(prefix + "limpiar")) {
+	
+     if (message.member.hasPermission("MANAGE_MESSAGES")) {
+         messages = message.channel.fetchMessages();
+        message.channel.bulkDelete(messages);
+            }
+	}         
 	else if (command === 'redes') {
 		message.channel.send({embed: {
 			color: 10181046,
@@ -121,3 +127,6 @@ client.on("message", (message) => {
 
 
 client.login(process.env.BOT_TOKEN);
+
+     
+     
