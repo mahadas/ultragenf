@@ -20,9 +20,10 @@ client.on("message", (message) => {
 	if (command === 'ping') {
 		let ping = Math.floor(message.client.ping);
 		.then(m => {
-			m.edit(`satellite_orbital Tu conexion es de \`${Math.floor(m.createdTimestamp - Date.now())} ms\`);
-      });
-  }
+			m.edit(`:satellite_orbital: Tu tienes de conexion ${ping} ms`);
+		});
+	}
+
 });
 
 
