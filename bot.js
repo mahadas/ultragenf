@@ -58,19 +58,32 @@ client.on("message", (message) => {
 			message.react('❎');
 		message.channel.send({embed})
 	}
-	if (message.content.startsWith(prefix + "ayuda")) {
-		const ayuda = new Discord.RichEmbed()
-			.setAuthor('Aca tienes mi ayuda en los comandos', 'https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png')
-			.addField('.Online', 'Comprueba los usuarios conectados en el servidor de')
-			.addField('Regular field title', 'Some value here')
-			.addBlankField()
-			.addField('Inline field title', 'Some value here', true)
-			.addField('Inline field title', 'Some value here', true)
-			.addField('Inline field title', 'Some value here', true)		
-			.setColor(3447003)
-			.setTimestamp()
-		message.channel.send({ayuda})
-	}
+	else if (command === 'ayuda') {
+		message.channel.send({embed: {
+			color: 10181046,
+      	author: {
+			name: "Estas son nuestras redes sociales",
+			icon_url: "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"
+		},
+		fields: [{
+			name: "YouTube",
+			value: "[Click aqui para redirigirse](https://www.youtube.com/channel/UCGT6xTgjXo2hqwL8GVG2MBg?view_as=subscriber)"
+		},
+		{
+			name: "Instagram",
+			value: "[Click aqui para redirigirse](https://www.instagram.com/heavenmces/)"
+		},
+		{
+			name: "Twitter",
+			value: "[Click aqui para redirigirse](https://twitter.com/HeavenMC7)"
+		}
+		],
+		timestamp: new Date(),
+		footer: {
+		icon_url: client.user.avatarURL,
+		text: "IP: play.heavenmc.es"
+      }
+    }
 	else if (command === 'redes') {
 		message.channel.send({embed: {
 			color: 10181046,
