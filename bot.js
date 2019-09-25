@@ -37,6 +37,12 @@ client.on("message", (message) => {
 			}});
 		}
 	}
+	if (message.content.startsWith(prefix + "prueba")) {
+		if client.channels.get('626559477566406666') {
+			message.channel.send('estas en este canal')
+		}
+	}
+
 	else if (command === 'args-info') {
 		if (!args.length) {
 			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
