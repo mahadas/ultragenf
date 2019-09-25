@@ -38,7 +38,7 @@ client.on("message", (message) => {
 		}
 	}
 	if (message.content.startsWith(prefix + "prueba")) {
-		if client.channels.get('626559477566406666') {
+		if (message.channel.id === '626559477566406666') {	
 			message.channel.send('estas en este canal')
 		}
 	}
