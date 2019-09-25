@@ -51,12 +51,11 @@ client.on("message", (message) => {
 			name: client.user.username,
 			icon_url: client.user.avatarURL
 		},
-		title: "Enlace Embed",
-		url: "https://github.com/CraterMaik",
-		description: "Mesaje de prueba para la descripcion del embed.",
+		title: "Anuncio",
+		description: "Estas son las redes sociales del servidor.",
 		fields: [{
-			name: "Campo1",
-			value: "Pueden tener diferentes campos con pequeñas descripciones."
+			name: "YouTube",
+			value: "[Click aqui para redirigirse](https://www.youtube.com/channel/UCGT6xTgjXo2hqwL8GVG2MBg?view_as=subscriber)"
 		},
 		{
 			name: "Campo2",
