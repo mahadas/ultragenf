@@ -58,6 +58,7 @@ client.on("message", (message) => {
 	} else if (message.content.startsWith(`${prefix}stop`)) {
 		stop(message, serverQueue);
 		return;
+	}
 	if (message.content.startsWith(prefix + "encuesta")) {
 		message.channel.send('Agrege una pregunta para la encuesta.')
  
