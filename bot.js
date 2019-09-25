@@ -19,9 +19,7 @@ client.on("message", (message) => {
 	const command = args.shift().toLowerCase();	
 	if (command === 'ping') {
 		let ping = Math.floor(message.client.ping);
-		.then(m => {
-			m.edit(`:satellite_orbital: Tu tienes de conexion ${ping} ms`);
-		});
+		message.channel.send(`:incoming_envelope: Ping Mensajes: ${ping}`);
 	}
 
 });
