@@ -16,7 +16,6 @@ client.on("ready", () => {
 });
 
 
-
 client.on("message", (message) => {
 	const args = message.content.slice(prefix.length).trim().split(/ +/g);
  	const command = args.shift().toLowerCase();	
@@ -58,20 +57,9 @@ client.on("message", (message) => {
 			message.react('✅');
 			message.react('❎');
 		message.channel.send({embed})
-	}        
-	if (message.content.startsWith(prefix + "ayuda")) {
-		const ayuda = new Discord.RichEmbed()
-			.setAuthor('Aca te dejamos nuestros comandos' , 'https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png')
-			.addField('.Ping', 'Comprueba la latencia del BOT.')
-			.addField('.Ip', 'Te muestro la ip del servidor.')
-			.addField('.Online', 'Te muestra las personas conectadas en el servidor.')
-			.addField('.Redes', 'Mira nuestras redes sociales.')
-			.addField('.Servidor', 'Muestra la informacion del servidor de discord.')
-			.setColor(3447003)
-			.setTimestamp()
-			.setFooter('IP: play.heavenmc.es');
-		message.channel.send({ayuda})
-	if (message.content.startsWith(prefix + "redes")) {
+	}
+
+	else if (command === 'redes') {
 		message.channel.send({embed: {
 			color: 10181046,
       	author: {
@@ -98,10 +86,38 @@ client.on("message", (message) => {
       }
     }
 
+
+});
+
+
+	}
+
+
+
+ if (command === "ban") {
+   let buser = message.mentions.users.first();
+   let breason = args.join(" ");
+   if (!buser) return message.channel.send("Menciona a alguien")
+   if (!breason) return message.channel.send("Dime la razon del ban")
+   if (!message.member.hasPermission["BAN_MEMBERS"]) return message.channel.send("Sin permisos bro")
+   
+  const bembed = new Discord.RichEmbed()
+   .setAuthor('Baneos de HeavenMC Discord')
+   .setThumbnail(buser.avatarURL)
+   .setColor("0xFF0000")
+   .addField("User Baneado", buser.username)
+   .addField("ID", buser.id)
+   .addField("Motivo", breason)
+   .addField("Staff", message.author.username)
+   message.guild.member(buser).ban(breason).reason
+   buser.send(bembed)
+   message.channel.send(bembed)
+   
+   }
+ 
+
+
 });
 
 
 client.login(process.env.BOT_TOKEN);
-
-     
-     
