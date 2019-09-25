@@ -58,13 +58,6 @@ client.on("message", (message) => {
 			message.react('✅');
 			message.react('❎');
 		message.channel.send({embed})
-	}
-	if (message.content.startsWith(prefix + "limpiar")) {
-	
-     if (message.member.hasPermission("MANAGE_MESSAGES")) {
-         messages = message.channel.fetchMessages();
-        message.channel.bulkDelete(messages);
-            }
 	}        
 	if (message.content.startsWith(prefix + "ayuda")) {
 		const ayuda = new Discord.RichEmbed()
@@ -98,7 +91,7 @@ client.on("message", (message) => {
 			value: "[Click aqui para redirigirse](https://twitter.com/HeavenMC7)"
 		}
 		],
-		timestamp: neww Date(),
+		timestamp: new Date(),
 		footer: {
 		icon_url: client.user.avatarURL,
 		text: "IP: play.heavenmc.es"
