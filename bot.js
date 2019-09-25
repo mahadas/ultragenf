@@ -30,8 +30,12 @@ client.on("message", (message) => {
 		if (args[0] === 'minecraft') {
 			var minecrafts = ["Your facts", "...", "..."];
 			var mine = Math.floor(Math.random() * minecrafts.length);
-			message.channel.send(minecrafts[mine]);
-			message.author.send('Te estamos enviando tu celular al mensaje privado')
+			message.channel.send('');
+			message.author.sendMessage(minecrafts[mine])
+			const embedes = new Discord.RichEmbed()
+				.setAuthor('Generando cuenta de minecraft...')
+				.setDescription('Tu cuenta esta siendo enviada a tu mensaje privado')
+			message.channel.send({embedes})	
 		}
 	}
 	else if (command === 'args-info') {
