@@ -67,7 +67,7 @@ client.on("message", (message) => {
 		timestamp: new Date(),
 		footer: {
 		icon_url: client.user.avatarURL,
-		text: "github.com/CraterMaik"
+		text: "IP: play.heavenmc.es"
       }
     }
 });
