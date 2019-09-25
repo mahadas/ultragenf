@@ -1,8 +1,8 @@
 {
-  "name": "yumeko",
-  "version": "0.1.0",
-  "description": "A simple discord bot",
-  "main": "MusicBot.js",
+  "name": "mahadas",
+  "version": "0.1 yt.0",
+  "description": "Bot realizado por mahadaconfigs",
+  "main": "bot.js",
   "scripts": {
     "test": ""
   },
@@ -11,7 +11,7 @@
     "bot",
     "discordbot"
   ],
-  "author": "iCrawl",
+  "author": "Mahada",
   "license": "MIT",
   "dependencies": {
     "discord.js": "^11.1.0",
