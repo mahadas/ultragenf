@@ -19,7 +19,10 @@ client.on("message", (message) => {
 	const command = args.shift().toLowerCase();	
 	if (command === 'ping') {
 		let ping = Math.floor(message.client.ping);
-		message.channel.send(`:incoming_envelope: Ping Mensajes: ${ping}`);
+		message.channel.send({embed: {
+				color: 7419530,
+				description: `:satellite_orbital: Tu conexion es de ${ping} ms`
+			}});	
 	}
 
 });
