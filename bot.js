@@ -1,8 +1,6 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
 const prefix = "!"
-const args = message.content.slice(prefix.length).trim().split(/ +/g);
-const command = args.shift().toLowerCase();	
 
 client.on("ready", () => {
 	client.user.setPresence({
@@ -17,18 +15,20 @@ client.on("ready", () => {
 
 
 client.on("message", (message) => {
-	if (message.content.startsWith(prefix + "ping")) {
+	const args = message.content.slice(prefix.length).trim().split(/ +/g);
+	const command = args.shift().toLowerCase();	
+	if (command === 'ping') {
 
-	    let ping = Math.floor(message.client.ping);
-	    
-	    message.channel.send(":ping_pong: Pong!")
-	      .then(m => {
+    let ping = Math.floor(message.client.ping);
+    
+    message.channel.send(":ping_pong: Pong!")
+      .then(m => {
 
-	          m.edit(`:incoming_envelope: Ping Mensajes: \`${Math.floor(m.createdTimestamp - Date.now())} ms\`\n:satellite_orbital: Ping DiscordAPI: \`${ping} ms\``);
-	      
-	      });
-	    
-	  }
+          m.edit(`:incoming_envelope: Ping Mensajes: \`${Math.floor(m.createdTimestamp - Date.now())} ms\`\n:satellite_orbital: Ping DiscordAPI: \`${ping} ms\``);
+      
+      });
+    
+  }
 });
 
 
