@@ -46,10 +46,10 @@ client.on("message", (message) => {
 	}
 	else if (command === 'redes') {
 		message.channel.send({embed: {
-			color: FFFF00,
+			color: 10181046,
       	author: {
-			name: 'Anuncio',
-			icon_url: 'https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png'
+			name: "Anuncio",
+			icon_url: "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"
 		},
 		title: "Anuncio",
 		description: "Estas son las redes sociales del servidor.",
