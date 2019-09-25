@@ -93,34 +93,40 @@ client.on("message", (message) => {
       }
     }
 
-
-});
-
-
-	}
-
-
-
- if (command === "ban") {
-   let buser = message.mentions.users.first();
-   let breason = args.join(" ");
-   if (!buser) return message.channel.send("Menciona a alguien")
-   if (!breason) return message.channel.send("Dime la razon del ban")
-   if (!message.member.hasPermission["BAN_MEMBERS"]) return message.channel.send("Sin permisos bro")
-   
-  const bembed = new Discord.RichEmbed()
-   .setAuthor('Baneos de HeavenMC Discord')
-   .setThumbnail(buser.avatarURL)
-   .setColor("0xFF0000")
-   .addField("User Baneado", buser.username)
-   .addField("ID", buser.id)
-   .addField("Motivo", breason)
-   .addField("Staff", message.author.username)
-   message.guild.member(buser).ban(breason).reason
-   buser.send(bembed)
-   message.channel.send(bembed)
-
-	}
+	else if (command === 'ayuda') {
+		message.channel.send({embed: {
+			color: 3447003,
+      	author: {
+			name: "Aca te dejamos nuestros comandos",
+			icon_url: "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"
+		},
+		fields: [{
+			name: ".Ping",
+			value: "Comprueba la latencia del BOT."
+		},
+		{
+			name: ".Ip",
+			value: "Te muestro la ip del servidor."
+		},
+		{
+			name: ".Online",
+			value: "Te muestra las personas conectadas en el servidor."
+		},
+		{
+			name: ".Redes",
+			value: "Mira nuestras redes sociales."
+		},		
+		{
+			name: ".Servidor",
+			value: "Muestra la informacion del servidor de discord."
+		}
+		],
+		timestamp: new Date(),
+		footer: {
+		icon_url: client.user.avatarURL,
+		text: "IP: play.heavenmc.es"
+      }
+    }
 
 });
 
