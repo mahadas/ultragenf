@@ -69,22 +69,7 @@ client.on("message", (message) => {
 		icon_url: client.user.avatarURL,
 		text: "IP: play.heavenmc.es"
 		}
-	}  
-	if (message.content.startsWith(prefix + "encuesta")) {
-		message.channel.send('Agrege una pregunta para la encuesta.')
-		const embed = new Discord.RichEmbed()
-			.setAuthor('Pregunta:')
-			.setDescription(''+args+'\n▔▔▔▔▔▔▔▔▔▔▔')
-			.addField('Me Gusta', '✅ Si')
-			.addField('No Me Gusta', '❎ No')
-			.setColor(0xff4d4d)
-			.setTimestamp()
-		message.channel.send({embed})
-		message.react('✅');
-		message.react('❎');
-		});
 	}
-
 });
 
 
