@@ -70,35 +70,20 @@ client.on("message", (message) => {
 		text: "IP: play.heavenmc.es"
       }
     }
+	if (message.content.startsWith(prefix + "encuesta")) {
+		message.channel.send('Agrege una pregunta para la encuesta.')
+		const embed = new Discord.RichEmbed()
+		.setAuthor('Pregunta:')
+		.setDescription(''+args+'\n▔▔▔▔▔▔▔▔▔▔▔')
+		.addField('Me Gusta', '✅ Si')
+		.addField('No Me Gusta', '❎ No')
+		.setColor(0xff4d4d)
+		.setTimestamp()
+		message.channel.send({embed})
+		message.react('✅');
+		message.react('❎');
 });
-
-
-	}
-
-
-
- if (command === "ban") {
-   let buser = message.mentions.users.first();
-   let breason = args.join(" ");
-   if (!buser) return message.channel.send("Menciona a alguien")
-   if (!breason) return message.channel.send("Dime la razon del ban")
-   if (!message.member.hasPermission["BAN_MEMBERS"]) return message.channel.send("Sin permisos bro")
-   
-  const bembed = new Discord.RichEmbed()
-   .setAuthor('Baneos de HeavenMC Discord')
-   .setThumbnail(buser.avatarURL)
-   .setColor("0xFF0000")
-   .addField("User Baneado", buser.username)
-   .addField("ID", buser.id)
-   .addField("Motivo", breason)
-   .addField("Staff", message.author.username)
-   message.guild.member(buser).ban(breason).reason
-   buser.send(bembed)
-   message.channel.send(bembed)
-   
-   }
- 
-
+  }
 
 });
 
