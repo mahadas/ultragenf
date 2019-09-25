@@ -54,8 +54,7 @@ client.on("message", (message) => {
 		title: "Anuncio",
 		description: "Estas son las redes sociales del servidor.",
 		fields: [{
-			icon_url: 'https://i.imgur.com/wSTFkRM.png'
-			name: ":yt: YouTube",
+			name: "YouTube",
 			value: "[Click aqui para redirigirse](https://www.youtube.com/channel/UCGT6xTgjXo2hqwL8GVG2MBg?view_as=subscriber)"
 		},
 		{
