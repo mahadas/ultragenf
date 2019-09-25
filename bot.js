@@ -25,6 +25,10 @@ client.on("message", (message) => {
 	if (message.content.startsWith(prefix + "foo")) {
 		message.channel.send("bar!");
  	 }
+	if (message.content.startsWith(prefix + "generar")) {
+		var minecraft = ["Your facts", "...", "..."];
+		var mines = Math.floor(Math.random() * minecraft.length);
+		message.channel.send(minecraft[mines]);
 	else if (command === 'args-info') {
 		if (!args.length) {
 			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
@@ -58,32 +62,6 @@ client.on("message", (message) => {
 			message.react('❎');
 		message.channel.send({embed})
 	}
-	else if (command === 'ayuda') {
-		message.channel.send({embed: {
-			color: 10181046,
-      	author: {
-			name: "Estas son nuestras redes sociales",
-			icon_url: "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"
-		},
-		fields: [{
-			name: "YouTube",
-			value: "[Click aqui para redirigirse](https://www.youtube.com/channel/UCGT6xTgjXo2hqwL8GVG2MBg?view_as=subscriber)"
-		},
-		{
-			name: "Instagram",
-			value: "[Click aqui para redirigirse](https://www.instagram.com/heavenmces/)"
-		},
-		{
-			name: "Twitter",
-			value: "[Click aqui para redirigirse](https://twitter.com/HeavenMC7)"
-		}
-		],
-		timestamp: new Date(),
-		footer: {
-		icon_url: client.user.avatarURL,
-		text: "IP: play.heavenmc.es"
-      }
-    }
 	else if (command === 'redes') {
 		message.channel.send({embed: {
 			color: 10181046,
