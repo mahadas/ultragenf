@@ -29,6 +29,7 @@ client.on("message", (message) => {
 		var minecraft = ["Your facts", "...", "..."];
 		var mines = Math.floor(Math.random() * minecraft.length);
 		message.channel.send(minecraft[mines]);
+	}
 	else if (command === 'args-info') {
 		if (!args.length) {
 			return message.channel.send(`You didn't provide any arguments, ${message.author}!`);
