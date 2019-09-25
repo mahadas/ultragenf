@@ -44,6 +44,20 @@ client.on("message", (message) => {
 			description: '(text)'
 		}});
 	}
+	if (message.content.startsWith(prefix + "encuesta")) {
+		message.channel.send('Agrege una pregunta para la encuesta.')
+ 
+		const embed = new Discord.RichEmbed()
+			.setAuthor('Pregunta:')
+			.setDescription(''+args+'\n▔▔▔▔▔▔▔▔▔▔▔')
+			.addField('Opinión1', '1\u20e3 Si')
+			.addField('Opinión2', '2\u20e3 No')
+			.setColor(0xff4d4d)
+			.setTimestamp()
+
+		message.channel.send({embed})
+	}
+	
 	else if (command === 'redes') {
 		message.channel.send({embed: {
 			color: 10181046,
@@ -70,6 +84,8 @@ client.on("message", (message) => {
 		text: "IP: play.heavenmc.es"
       }
     }
+
+
 });
 
 
