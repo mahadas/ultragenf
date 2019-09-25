@@ -1,13 +1,8 @@
 {
-  "name": "discord-1337-bot",
-  "version": "0.0.1",
+  "name": "ultragen",
+  "version": "1.0.0",
+  "description": "My own Discord bot",
   "main": "bot.js",
-  "scripts": {
-    "start": "node bot.js"
-  },
-  "dependencies": {
-    "eris": "^0.7.2"
-  },
-  "engines": {
-    "node": "8.x"
-  }
+  "author": "YOUR-NAME-HERE",
+  "dependencies": {}
+}
