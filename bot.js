@@ -68,8 +68,38 @@ client.on("message", (message) => {
 		footer: {
 		icon_url: client.user.avatarURL,
 		text: "IP: play.heavenmc.es"
-		}
+      }
+    }
+});
+
+
 	}
+
+
+
+ if (command === "ban") {
+   let buser = message.mentions.users.first();
+   let breason = args.join(" ");
+   if (!buser) return message.channel.send("Menciona a alguien")
+   if (!breason) return message.channel.send("Dime la razon del ban")
+   if (!message.member.hasPermission["BAN_MEMBERS"]) return message.channel.send("Sin permisos bro")
+   
+  const bembed = new Discord.RichEmbed()
+   .setAuthor('Baneos de HeavenMC Discord')
+   .setThumbnail(buser.avatarURL)
+   .setColor("0xFF0000")
+   .addField("User Baneado", buser.username)
+   .addField("ID", buser.id)
+   .addField("Motivo", breason)
+   .addField("Staff", message.author.username)
+   message.guild.member(buser).ban(breason).reason
+   buser.send(bembed)
+   message.channel.send(bembed)
+   
+   }
+ 
+
+
 });
 
 
