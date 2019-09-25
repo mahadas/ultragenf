@@ -58,9 +58,6 @@ client.on("message", (message) => {
 	} else if (message.content.startsWith(`${prefix}stop`)) {
 		stop(message, serverQueue);
 		return;
-	} else {
-		message.channel.send('You need to enter a valid command!')
-	}
 	if (message.content.startsWith(prefix + "encuesta")) {
 		message.channel.send('Agrege una pregunta para la encuesta.')
  
