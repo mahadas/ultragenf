@@ -54,10 +54,9 @@ client.on("message", (message) => {
 			.addField('No me gusta', '❎')
 			.setColor(1752220)
 			.setTimestamp()
-
+			message.react('✅');
+			message.react('❎');
 		message.channel.send({embed})
-		message.react('✅');
-		message.react('❎');			
 	}
 
 	else if (command === 'redes') {
