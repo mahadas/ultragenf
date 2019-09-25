@@ -48,11 +48,9 @@ client.on("message", (message) => {
 		message.channel.send({embed: {
 			color: 10181046,
       	author: {
-			name: "Anuncio",
+			name: "Estas son nuestras redes sociales",
 			icon_url: "https://cdn.tebex.io/webstore/799123/images/799123-98e9b9ee1e018f32203ec1984acb30a2459c79d9.png"
 		},
-		title: "Anuncio",
-		description: "Estas son las redes sociales del servidor.",
 		fields: [{
 			name: "YouTube",
 			value: "[Click aqui para redirigirse](https://www.youtube.com/channel/UCGT6xTgjXo2hqwL8GVG2MBg?view_as=subscriber)"
