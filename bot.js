@@ -18,8 +18,17 @@ client.on("ready", () => {
 
 client.on("message", (message) => {
 	if (message.content.startsWith(prefix + "ping")) {
-		message.channel.send(`Pong! Latency is ${m.createdTimestamp - message.createdTimestamp}ms. API Latency is ${Math.round(client.ping)}ms`);
-	}	
+
+	    let ping = Math.floor(message.client.ping);
+	    
+	    message.channel.send(":ping_pong: Pong!")
+	      .then(m => {
+
+	          m.edit(`:incoming_envelope: Ping Mensajes: \`${Math.floor(m.createdTimestamp - Date.now())} ms\`\n:satellite_orbital: Ping DiscordAPI: \`${ping} ms\``);
+	      
+	      });
+	    
+	  }
 });
 
 
