@@ -54,16 +54,16 @@ client.on("message", (message) => {
 		title: "Anuncio",
 		description: "Estas son las redes sociales del servidor.",
 		fields: [{
-			name: "YouTube",
+			name: ":yt: YouTube",
 			value: "[Click aqui para redirigirse](https://www.youtube.com/channel/UCGT6xTgjXo2hqwL8GVG2MBg?view_as=subscriber)"
 		},
 		{
-			name: "Campo2",
-			value: "Puedes poner [Enlaces web](https://github.com/CraterMaik) dentro del embed."
+			name: "Instagram",
+			value: "[Click aqui para redirigirse](https://www.instagram.com/heavenmces/)"
 		},
 		{
-			name: "Campo3",
-			value: "Puedes poner todos los Markdown *cursiva* **__Marcado__** dentro de un embed."
+			name: "Twitter",
+			value: "[Click aqui para redirigirse](https://twitter.com/HeavenMC7)"
 		}
 		],
 		timestamp: new Date(),
