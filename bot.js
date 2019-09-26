@@ -29,10 +29,7 @@ client.on("message", (message) => {
 			if (args[0] === 'minecraft') {
 				var minecrafts = ["Your facts", "...", "..."];
 				var mine = Math.floor(Math.random() * minecrafts.length);
-				message.author.sendMessage({embed: {
-					color: 1752220,
-					description: `minecrafts[mine]`
-				}});		
+				message.author.sendMessage(minecrafts[mine])
 				message.channel.send({embed: {
 					color: 1752220,
 					description: 'La cuenta se te envio al mensaje privado.'
