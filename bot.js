@@ -36,7 +36,18 @@ client.on("message", (message) => {
 
 		}
 	}
+	if (message.content.startsWith(prefix + "limpiar")) {
+		if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
+			.then(msg => {
+				msg.delete(10000)
+			})
 
+
+		}
+
+
+
+	}
 
 });
 
