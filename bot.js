@@ -34,7 +34,8 @@ client.on("message", (message) => {
 					color: 1752220,
 					description: 'La cuenta se te envio al mensaje privado.'
 				}});	
-		}
+			}
+		}		
 		else {
 			message.channel.send({embed: {
 				color: 15158332,
