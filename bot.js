@@ -36,7 +36,7 @@ client.on("message", (message) => {
 
 		}
 	}
-	if (message.content.startsWith(prefix + "limpiar")) {
+	if (message.content == prefix + "clear") {
 		if (message.member.hasPermission("MANAGE_MESSAGES")) {
 		message.channel.fetchMessages()
 		message.channel.
