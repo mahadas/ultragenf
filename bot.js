@@ -36,16 +36,6 @@ client.on("message", (message) => {
 
 		}
 	}
-	if (message.content == "limpiar") {
-		if (message.member.hasPermission("MANAGE_MESSAGES")) {
-		message.channel.fetchMessages()
-		message.channel.
- 		.then(function(list){
-			message.channel.bulkDelete(list);
-			}, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
-        }
-    }
-
 
 
 });
