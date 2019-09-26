@@ -24,9 +24,18 @@ client.on("message", (message) => {
 				description: `:satellite_orbital: Tu conexion es de ${ping} ms`
 			}});	
 	}
-	if (message.content.startsWith(prefix + "prueba")) {
+	if (message.content.startsWith(prefix + "generar")) {
 		if (message.channel.id === '626559477566406666') {	
-			message.channel.send('estas en este canal')
+			var minecrafts = ["Your facts", "...", "..."];
+			var mine = Math.floor(Math.random() * minecrafts.length);
+			message.author.sendMessage({embed: {
+				color: 1752220,
+				description: 'minecrafts[mine]'
+			}});		
+			message.channel.send({embed: {
+				color: 1752220,
+				description: 'La cuenta se te envio al mensaje privado.'
+			}});	
 		}
 		else {
 			message.channel.send({embed: {
@@ -36,18 +45,7 @@ client.on("message", (message) => {
 
 		}
 	}
-	if (message.content.startsWith(prefix + "limpiar")) {
-		if (!message.channel.permissionsFor(message.author).hasPermission("MANAGE_MESSAGES")) {
-			.then(msg => {
-				msg.delete(10000)
-			})
 
-
-		}
-
-
-
-	}
 
 });
 
