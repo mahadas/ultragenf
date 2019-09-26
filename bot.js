@@ -36,9 +36,10 @@ client.on("message", (message) => {
 
 		}
 	}
-	if (message.content == "clear") {
+	if (message.content.startsWith(prefix + "limpiar")) {
 		if (message.member.hasPermission("MANAGE_MESSAGES")) {
 		message.channel.fetchMessages()
+		message.channel.
  		.then(function(list){
 			message.channel.bulkDelete(list);
 			}, function(err){message.channel.send("ERROR: ERROR CLEARING CHANNEL.")})                        
