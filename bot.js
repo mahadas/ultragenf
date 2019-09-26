@@ -26,16 +26,17 @@ client.on("message", (message) => {
 	}
 	if (message.content.startsWith(prefix + "generar")) {
 		if (message.channel.id === '626559477566406666') {	
-			var minecrafts = ["Your facts", "...", "..."];
-			var mine = Math.floor(Math.random() * minecrafts.length);
-			message.author.sendMessage({embed: {
-				color: 1752220,
-				description: 'minecrafts[mine]'
-			}});		
-			message.channel.send({embed: {
-				color: 1752220,
-				description: 'La cuenta se te envio al mensaje privado.'
-			}});	
+			if (args[0] === 'minecraft') {
+				var minecrafts = ["Your facts", "...", "..."];
+				var mine = Math.floor(Math.random() * minecrafts.length);
+				message.author.sendMessage({embed: {
+					color: 1752220,
+					description: `minecrafts[mine]`
+				}});		
+				message.channel.send({embed: {
+					color: 1752220,
+					description: 'La cuenta se te envio al mensaje privado.'
+				}});	
 		}
 		else {
 			message.channel.send({embed: {
