@@ -24,7 +24,7 @@ client.on("message", (message) => {
 			}});	
 	}
 	if (command === 'verificar') {
-		mesage.channel.send(`${message.author.tag}`);
+		client.message.send(author, 'pong');
 	}			
 });
 
