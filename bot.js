@@ -23,6 +23,10 @@ client.on("message", (message) => {
 				description: `:satellite_orbital: Tu conexion es de ${ping} ms`
 			}});	
 	}
+	if (command === 'verificar') {
+		let text = args.join(" ");
+		mesage.channel.send(`message.author.tag`);
+	}			
 });
 
 
