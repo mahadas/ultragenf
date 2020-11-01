@@ -24,8 +24,7 @@ client.on("message", (message) => {
 			}});	
 	}
 	if (command === 'verificar') {
-		let text = args.join(" ");
-		mesage.channel.send(`message.author.tag`);
+		mesage.channel.send(`${message.author.tag}`);
 	}			
 });
 
