@@ -24,7 +24,18 @@ client.on("message", (message) => {
 			}});	
 	}
 	if (command === 'verificar') {
-		client.message.send(author, 'pong');
+		let text = args.join(" ");
+		if (client.users.cache.get("323614229968191489")) {
+			if (text == "mahada") {
+				message.channel.send('Te verificaste correctamente');
+			
+				
+			}else {
+				message.channel.send('El codigo de verificacion no es correcto');
+				
+			}
+			
+		}
 	}			
 });
 
