@@ -39,6 +39,7 @@ client.on("message", (message) => {
 				}});
 			}
 		}
+	}
 	
 	if (command === 'avatar') {
 		message.channel.send({embed: {
