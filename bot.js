@@ -42,10 +42,7 @@ client.on("message", (message) => {
 	}
 	
 	if (command === 'avatar') {
-		const tMember = message.mentions.members.first()
-		let embed = new Discord.RichEmbed().setTitle(tMember.displayName + " Avatar").setImage(tMember.user.avatarURL).setColor('#add8e6')
-
-		message.channel.send(embed);
+		message.channel.send(message.author.avatarURL());
 	}
 	
 	
