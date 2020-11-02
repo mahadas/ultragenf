@@ -30,12 +30,12 @@ client.on("message", (message) => {
 				message.member.addRole('772617653029699605');
 				message.channel.send({embed: {
 				color: 3066993,
-				description: `:satellite_orbital: Te has verificado correctamente :satellite_orbital: `
+				description: `:satellite_orbital:` + message.author + ` te has verificado correctamente :satellite_orbital: `
 			}});
 			} else {
 				message.channel.send({embed: {
 				color: 15158332,
-				description: `:satellite_orbital: Pusiste mal la clave unica, prueba denuevo :satellite_orbital: `
+				description: `:satellite_orbital:` + message.author + ` pusiste mal la clave unica, prueba denuevo :satellite_orbital: `
 
 				}});
 			}
