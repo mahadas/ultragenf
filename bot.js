@@ -6,8 +6,8 @@ client.on("ready", () => {
 	client.user.setPresence({
        status: "online",
        game: {
-           name: "$ayuda | Verificación Unica",
-           url: "https://twitter.com/_mahada_",
+           name: "$ayuda | Ranger BOT",
+           url: "https://twitch.tv/brg_mahada",
            type: "STREAMING"
        }
    });
@@ -47,9 +47,8 @@ client.on("message", (message) => {
 			Embed.setDescription(message.author.displayAvatarURL())
 			Embed.setColor('RANDOM')
 			return message.channel.send(Embed)
+			}
 		}
-		
-		
 	}
 	
 	
