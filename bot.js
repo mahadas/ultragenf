@@ -34,7 +34,9 @@ client.on("message", (message) => {
 			} else {
 				message.channel.send({embed: {
 				color: 15158332,
-				description: `:satellite_orbital: Pusiste mal la clave unica, prueba denuevo :satellite_orbital: `						
+				description: `:satellite_orbital: Pusiste mal la clave unica, prueba denuevo :satellite_orbital: `
+
+				}});
 			}
 			
 		}
