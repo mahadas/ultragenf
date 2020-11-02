@@ -42,11 +42,9 @@ client.on("message", (message) => {
 	}
 	
 	if (command === 'avatar') {
-		message.channel.send({embed: {
-			title: 'Tu avatar',
-			color: 15158332,
-			description: message.author.avatarURL()
-			}});
+		let embed = new Discord.RichEmbed().setTitle(tMember.displayName + " Avatar").setImage(tMember.user.avatarURL).setColor('#add8e6')
+
+		message.channel.send(embed);
 	}
 	
 	
