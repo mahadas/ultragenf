@@ -25,7 +25,7 @@ client.on("message", (message) => {
 	}
 	if (command === 'verificar') {
 		let text = args.join(" ");
-		if (message.author == "mahada#0641") {
+		if (message.author == "mahada") {
 			if (text == "roberto") {
 				message.channel.send('Te verificaste correctamente');
 				
