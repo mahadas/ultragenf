@@ -24,7 +24,7 @@ client.on("message", (message) => {
 			}});	
 	}
 	if (command === 'verificar') {
-		const role = message.guild.roles.cache.find(role => role.name === ‘772617653029699605’)
+		const role = message.guild.roles.cache.find(role => role.name === 772617653029699605)
 		const target = message.mentions.members.first();
 		let text = args.join(" ");
 		if (message.author.tag == "mahada#0641") {
