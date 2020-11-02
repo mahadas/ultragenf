@@ -25,20 +25,15 @@ client.on("message", (message) => {
 	}
 	if (command === 'verificar') {
 		let text = args.join(" ");
-		if (message.author == "mahada") {
+		if (message.author == "mahada#0641") {
 			if (text == "roberto") {
 				message.channel.send('Te verificaste correctamente');
-				
-			}else {
-				message.channel.send('El codigo de verificacion no es correcto');
-				
 			}
-			
 			
 		}
 	}	
 	if (command === 'prueba') {
-		message.channel.send('El usuario es ' + message.author);
+		message.channel.send('El usuario es ' + message.author.tag);
 	
 	}
 });
