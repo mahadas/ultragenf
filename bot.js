@@ -27,6 +27,7 @@ client.on("message", (message) => {
 		let text = args.join(" ");
 		if (message.author.tag == "mahada#0641") {
 			if (text == "roberto") {
+				message.author.add_roles("772617653029699605")
 				message.channel.send({embed: {
 				color: 3066993,
 				description: `:satellite_orbital: Te has verificado correctamente :satellite_orbital: `
