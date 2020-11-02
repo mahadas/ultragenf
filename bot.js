@@ -27,7 +27,14 @@ client.on("message", (message) => {
 		let text = args.join(" ");
 		if (message.author.tag == "mahada#0641") {
 			if (text == "roberto") {
-				message.channel.send('Te verificaste correctamente');
+				message.channel.send({embed: {
+				color: 3066993,
+				description: `:satellite_orbital: Te has verificado correctamente :satellite_orbital: `
+			}});
+			} else {
+				message.channel.send({embed: {
+				color: 15158332,
+				description: `:satellite_orbital: Pusiste mal la clave unica, prueba denuevo :satellite_orbital: `						
 			}
 			
 		}
