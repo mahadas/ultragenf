@@ -41,14 +41,11 @@ client.on("message", (message) => {
 		}
 	
 	if (command === 'avatar') {
-		let Embed = new MessageEmbed()
-		if(!message.mentions.users.first()){
-			Embed.settitle('Tu Avatar' + message.author)
-			Embed.setDescription(message.author.displayAvatarURL())
-			Embed.setColor('RANDOM')
-			return message.channel.send(Embed)
-			}
-		}
+		message.channel.send({embed: {
+			title: 'Tu avatar',
+			color: 15158332,
+			description: message.author.displayAvatarURL()
+			}});
 	}
 	
 	
