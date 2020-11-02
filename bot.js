@@ -24,10 +24,12 @@ client.on("message", (message) => {
 			}});	
 	}
 	if (command === 'verificar') {
+		const role = message.guild.roles.cache.find(role => role.name === ‘VERIFICADO’)
+		const target = message.mentions.members.first();
 		let text = args.join(" ");
 		if (message.author.tag == "mahada#0641") {
 			if (text == "roberto") {
-				guildMember.addRole('772617653029699605');  
+				target.roles.cache.add(role) 
 				message.channel.send({embed: {
 				color: 3066993,
 				description: `:satellite_orbital: Te has verificado correctamente :satellite_orbital: `
