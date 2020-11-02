@@ -45,7 +45,7 @@ client.on("message", (message) => {
 		message.channel.send({embed: {
 			title: 'Tu avatar',
 			color: 15158332,
-			description: message.author.displayAvatarURL()
+			description: message.author.avatarURL()
 			}});
 	}
 	
