@@ -25,18 +25,22 @@ client.on("message", (message) => {
 	}
 	if (command === 'verificar') {
 		let text = args.join(" ");
-		if (client.users.cache.get("323614229968191489")) {
+		if (message.author == "") {
 			if (text == "mahada") {
 				message.channel.send('Te verificaste correctamente');
-			
 				
 			}else {
 				message.channel.send('El codigo de verificacion no es correcto');
 				
 			}
 			
+			
 		}
-	}			
+	}	
+	if (command === 'prueba') {
+		message.channel.send('El usuario es ' + message.author);
+	
+	}
 });
 
 
