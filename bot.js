@@ -36,12 +36,23 @@ client.on("message", (message) => {
 				message.channel.send({embed: {
 				color: 15158332,
 				description: `:satellite_orbital:` + message.author + ` pusiste mal la clave unica, prueba denuevo :satellite_orbital: `
-
 				}});
 			}
-			
 		}
-	}	
+	
+	if (command === 'avatar') {
+		let Embed = new MessageEmbed()
+		if(!message.mentions.users.first()){
+			Embed.settitle('Tu Avatar' + message.author)
+			Embed.setDescription(message.author.displayAvatarURL())
+			Embed.setColor('RANDOM')
+			return message.channel.send(Embed)
+		}
+		
+		
+	}
+	
+	
 	if (command === 'prueba') {
 		message.channel.send('El usuario es ' + message.author.tag);
 	
