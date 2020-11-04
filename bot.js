@@ -56,7 +56,7 @@ client.on("message", (message) => {
     const n = Math.floor(Math.random() * limit + 1);
     if (!n || limit <= 0)
       return this.sendErrorMessage(message, 0, 'Please provide a valid number of dice sides');
-    const embed = new MessageEmbed()
+    const embed = new Discord.MessageEmbed()
       .setTitle('🎲  Dice Roll  🎲')
       .setDescription(`${message.member}, you rolled a **${n}**!`)
       .setFooter(message.member.displayName,  message.author.displayAvatarURL({ dynamic: true }))
