@@ -52,11 +52,11 @@ client.on("message", (message) => {
 	}
 	if (command === 'ip') {
 		let text = args.join(" ");
-		message.channel.send('El usuario es ' + message.author.tag);
-				message.channel.send({embed: {
-				color: 1752220,
-				description: `:satellite_orbital: Cargando IP de` + message.author + ` y esta siendo enviada a los logs  de nuestro bot :satellite_orbital: `
-			}});	
+
+		message.channel.send({embed: {
+		color: 1752220,
+			description: `:satellite_orbital: (DNS CONECTADOS) Cargando IP de ` + message.author + ` y esta siendo enviada a los logs  de nuestro bot :satellite_orbital: `
+		}});	
 	}	
 	if (command === 'dado') {
     let limit = args[0];
